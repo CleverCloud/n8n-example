@@ -1,12 +1,28 @@
 {
-  "name": "n8n",
+  "name": "n8n-example",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {},
-  "author": "",
-  "license": "ISC",
+  "description": "Example deployment for n8n on Clever Cloud",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx n8n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CleverCloud/n8n-example.git"
+  },
+  "keywords": [
+    "n8n",
+    "clever-cloud",
+    "clever",
+    "clever.cloud"
+  ],
+  "author": "Horacio Gonzalez <horacio.gonzalez@clever-cloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CleverCloud/n8n-example/issues"
+  },
+  "homepage": "https://github.com/CleverCloud/n8n-example#readme",
   "dependencies": {
-    "n8n-core": "^0.40.0",
-    "n8n-workflow": "^0.36.0"
+    "n8n": "^1.82.3"
   }
 }

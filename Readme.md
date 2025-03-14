@@ -18,26 +18,37 @@ n8n allows you to build workflows that connect various services and automate tas
 
 ## Deployment Guide
 
+### Before You Begin
+
+Before starting the deployment process, you'll need to decide on:
+
+- **Application Name**: Choose a unique name for your n8n application (e.g., `my-n8n-app`)
+- **Domain Name**: Optionally, choose a domain name for your application
+
+You'll use these values throughout the deployment process. In the commands below, replace:
+- `<APP_NAME>` with your chosen application name
+- `<YOUR_DOMAIN_NAME>` with your domain name (if applicable)
+
 ### Using Clever Tools CLI
 
 Follow these steps to deploy n8n on Clever Cloud using the command line:
 
 ```bash
 # Step 1: Create a Node.js application
-clever create --type node n8n
+clever create --type node <APP_NAME>
 
 # Step 2: Add your domain (optional but recommended)
 clever domain add <YOUR_DOMAIN_NAME>
 
 # Step 3: Create required add-ons
 # - File system bucket for persistent storage
-clever addon create fs-bucket --plan s n8n-fs
+clever addon create fs-bucket --plan s <APP_NAME>-fs
 # - PostgreSQL database for workflow storage
-clever addon create postgresql-addon --plan xs_sml n8n-pg
+clever addon create postgresql-addon --plan xs_sml <APP_NAME>-pg
 
 # Step 4: Link add-ons to your application
-clever service link-addon n8n-pg
-clever service link-addon n8n-fs
+clever service link-addon <APP_NAME>-pg
+clever service link-addon <APP_NAME>-fs
 
 # Step 5: Configure environment variables
 # Basic configuration
@@ -47,11 +58,10 @@ clever env set N8N_HOST <YOUR_DOMAIN_NAME>
 clever env set WEBHOOK_TUNNEL_URL "https://<YOUR_DOMAIN_NAME>/"
 clever env set VUE_APP_URL_BASE_APP https://<YOUR_DOMAIN_NAME>/
 
+clever env set N8N_RUNNERS_ENABLED true
+
 # Security settings (IMPORTANT: use strong, unique values)
 clever env set N8N_ENCRYPTION_KEY '<YOUR_SUPER_SECRET_ENCRYPTION_KEY>'
-clever env set N8N_BASIC_AUTH_ACTIVE true
-clever env set N8N_BASIC_AUTH_USER <YOUR_USERNAME>
-clever env set N8N_BASIC_AUTH_PASSWORD <YOUR_PASSWORD>
 
 # Execution data settings
 clever env set EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS true
@@ -83,7 +93,7 @@ clever deploy
 ## Post-Deployment
 
 1. Once deployed, access your n8n instance at `https://<YOUR_DOMAIN_NAME>/`
-2. Log in using the credentials you set in the environment variables
+2. Follow the setup wizard to create your owner account
 3. Start creating your workflows!
 
 ## Important Notes
@@ -91,6 +101,20 @@ clever deploy
 - **Security**: Always use strong, unique passwords and encryption keys
 - **Scaling**: The configuration above is suitable for small to medium workloads. For higher demands, consider upgrading your PostgreSQL plan
 - **Backups**: Regular backups of your PostgreSQL database are recommended
+
+### User Authentication
+
+Since n8n version 1.0, basic authentication has been deprecated in favor of the built-in user management system:
+
+1. **First-time setup**:
+   - When you first access your n8n instance, you'll be prompted to create an owner account
+   - Follow the on-screen instructions to set up your username, email, and password
+
+2. **Managing users**:
+   - After initial setup, you can manage additional users through the n8n UI
+   - Navigate to Settings > Users to add or modify user accounts
+
+
 
 ## Troubleshooting
 

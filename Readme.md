@@ -57,7 +57,7 @@ clever service link-addon <APP_NAME>-fs
 clever env set N8N_PORT 8080
 clever env set N8N_PROTOCOL https
 clever env set N8N_HOST <YOUR_DOMAIN_NAME>
-clever env set WEBHOOK_TUNNEL_URL "https://<YOUR_DOMAIN_NAME>/"
+clever env set WEBHOOK_URL "https://<YOUR_DOMAIN_NAME>/"
 clever env set VUE_APP_URL_BASE_APP https://<YOUR_DOMAIN_NAME>/
 
 clever env set N8N_RUNNERS_ENABLED true

@@ -7,7 +7,7 @@
 
 ## Overview
 
-This repository provides a complete guide for deploying [n8n](https://n8n.io/) - a powerful workflow automation tool - on [Clever Cloud](https://clever-cloud.com), a European PaaS provider.
+This repository provides a complete guide for deploying [n8n](https://n8n.io/) - a powerful workflow automation tool - on [Clever Cloud](https://clever-cloud.com), an European PaaS provider.
 
 n8n allows you to build workflows that connect various services and automate tasks without writing code. By deploying on Clever Cloud, you get a reliable, scalable hosting solution with minimal maintenance overhead.
 

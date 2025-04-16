@@ -62,6 +62,9 @@ clever env set VUE_APP_URL_BASE_APP https://<YOUR_DOMAIN_NAME>/
 
 clever env set N8N_RUNNERS_ENABLED true
 
+# Timezone settings (update with your local timezone)
+clever env set GENERIC_TIMEZONE "Europe/Paris"
+
 # Security settings (IMPORTANT: use strong, unique values)
 clever env set N8N_ENCRYPTION_KEY '<YOUR_SUPER_SECRET_ENCRYPTION_KEY>'
 

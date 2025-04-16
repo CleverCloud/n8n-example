@@ -65,6 +65,9 @@ clever env set N8N_RUNNERS_ENABLED true
 # Timezone settings (update with your local timezone)
 clever env set GENERIC_TIMEZONE "Europe/Paris"
 
+# Release type: dev|stable
+clever env set N8N_RELEASE_TYPE dev
+
 # Security settings (IMPORTANT: use strong, unique values)
 clever env set N8N_ENCRYPTION_KEY '<YOUR_SUPER_SECRET_ENCRYPTION_KEY>'
 

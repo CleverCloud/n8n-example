@@ -1,0 +1,7 @@
+{
+  "name": "n8n-nodes",
+  "type": "docker",
+  "deploy": {
+    "restart": "always"
+  }
+}

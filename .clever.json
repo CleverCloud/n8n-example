@@ -1,7 +1,17 @@
 {
-  "name": "n8n-nodes",
   "type": "docker",
+  "name": "n8n-nodes",
   "deploy": {
     "restart": "always"
-  }
+  },
+  "apps": [
+    {
+      "app_id": "app_1994c5dc-c016-444e-841f-11833ef3d038",
+      "org_id": "user_50e6b6d2-cd2d-467e-ae18-a5f00085e5f8",
+      "deploy_url": "https://push-n3-par-clevercloud-customers.services.clever-cloud.com/app_1994c5dc-c016-444e-841f-11833ef3d038.git",
+      "git_ssh_url": "git+ssh://git@push-n3-par-clevercloud-customers.services.clever-cloud.com/app_1994c5dc-c016-444e-841f-11833ef3d038.git",
+      "name": "n8n-nodes",
+      "alias": "n8n-nodes"
+    }
+  ]
 }

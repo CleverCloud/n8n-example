@@ -45,7 +45,7 @@ clever domain add <YOUR_DOMAIN_NAME>
 # Step 3: Create required add-ons
 # - File system bucket for persistent storage
 clever addon create fs-bucket --plan s <APP_NAME>-fs
-# - PostgreSQL database for workflow storage
+# - PostgreSQL database for workflow storage (minimum XXS plan required, XS or higher recommended)
 clever addon create postgresql-addon --plan xs_sml <APP_NAME>-pg
 
 # Step 4: Link add-ons to your application
@@ -100,7 +100,7 @@ clever deploy
 
 ## Important Notes
 
-- **Security**: Always use strong, unique passwords and encryption keys
+- **Database Requirements**: For n8n to function properly on Clever Cloud, your PostgreSQL database must use a minimum of XXS plan. For production environments and better performance, XS plan or larger is strongly recommended.
 - **Scaling**: The configuration above is suitable for small to medium workloads. For higher demands, consider upgrading your PostgreSQL plan
 - **Backups**: Regular backups of your PostgreSQL database are recommended
 

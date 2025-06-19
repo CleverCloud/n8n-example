@@ -79,8 +79,19 @@ clever env set DB_POSTGRESDB_PORT `clever env | awk -F = '/POSTGRESQL_ADDON_PORT
 clever env set DB_POSTGRESDB_USER `clever env | awk -F = '/POSTGRESQL_ADDON_USER/ { gsub(/"/, "", $2); print $2}'`
 clever env set DB_POSTGRESDB_PASSWORD `clever env | awk -F = '/POSTGRESQL_ADDON_PASSWORD/ { gsub(/"/, "", $2); print $2}'`
 
+# Clever Cloud hooks
+clever env set CC_PRE_BUILD_HOOK "clevercloud/pre-build-hook.sh"
+
 # Mount the filesystem bucket
 clever env set CC_FS_BUCKET /data:`clever env | awk -F = '/BUCKET_HOST/ { gsub(/"/, "", $2); print $2}'`
+```
+
+## Install community nodes
+
+Simply set this environment variable to the list of community nodes you want to install (space-separated). For example:
+
+```bash
+clever env set APP_N8N_COMMUNITY_NODES_TO_INSTALL "n8n-nodes-… n8n-nodes-… n8n-nodes-…"
 ```
 
 ## Deployment

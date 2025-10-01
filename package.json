@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/CleverCloud/n8n-example#readme",
   "dependencies": {
-    "n8n": "^1.82.3"
+    "n8n": "^1.113.3"
   }
 }

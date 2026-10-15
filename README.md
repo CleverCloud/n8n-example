@@ -1,5 +1,3 @@
-![Clever Cloud logo](/github-assets/clever-cloud-logo.png)
-
 # n8n on Clever Cloud
 
 [![n8n.io - Workflow Automation](https://img.shields.io/badge/n8n.io-Workflow%20Automation-blue)](https://n8n.io)
